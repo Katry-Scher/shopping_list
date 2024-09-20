@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no" />
+    <title>Pagina inicial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="favorites.css">
+    <script src="script.js" defer></script>
+    <script src="filter.js" defer></script>
+    <script src="seach.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    
+    <!--Maps-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+
+    <!--Slick carousel-->
+    <script src="favorites.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <header>
+        <div id="greeting" class="txt"></div>
+        <div class="img_profile">
+            <img src="imgs/profile.jpg" alt="">
+        </div>
+    </header>
+
+    <main>
+        <section class="market-section">
+          <h1>Your favorites markets</h1>
+          <div class="carousel-slick">
+              <div>
+                <a href="https://www.aldi.co.uk/"><img src="imgs/aldi.png" alt="Mercado 1"></a>
+              </div>
+              <div>
+                <a href="https://www.asda.com/"><img src="imgs/asda.png" alt="Mercado 2"></a>
+              </div>
+              <div>
+                <a href="https://www.coop.co.uk/"><img src="imgs/coop.png" alt="Mercado 3"></a>
+              </div>
+              <div>
+                <a href="https://www.costco.co.uk/"><img src="imgs/costo.png" alt="Mercado 4"></a>
+              </div>
+              <div>
+                <a href="https://www.iceland.co.uk/"><img src="imgs/iceland.png" alt="Mercado 5"></a>
+              </div>
+              <div>
+                <a href="https://www.lidl.co.uk/"><img src="imgs/lidl.png" alt="Mercado 6"></a>
+              </div>
+              <div>
+                <a href="https://www.marksandspencer.com/ie/c/food/in-store-offers"><img src="imgs/m&s.png" alt="Mercado 7"></a>
+              </div>
+              <div>
+                <a href="https://groceries.morrisons.com/webshop/startWebshop.do"><img src="imgs/morrisons.png" alt="Mercado 8"></a>
+              </div>
+              <div>
+                <a href="https://www.sainsburys.co.uk/"><img src="imgs/sainsbury's.png" alt="Mercado 9"></a>
+              </div>
+              <div>
+                <a href="https://www.tesco.com/?srsltid=AfmBOoovOXjn1g6JPKrNKuEzfc5cRWSjTAXUt7RQArurEOjdIcIekT5B"><img src="imgs/tesco.png" alt="Mercado 10"></a>
+              </div>
+              <div>
+                <a href="https://www.wholefoodsmarket.co.uk/"><img src="imgs/whole_Foods.png" alt="Mercado 11"></a>
+              </div>
+              
+          </div>                     
+        </section>
+        
+        <section class="organic_fairs">
+            <h1>Organic Fairs</h1>
+
+            <div id="map"></div>
+        </section>
+
+        <section class="items_filter">
+          <h1>Promotion of the day</h1>
+          <div class="filter-list">
+              <ul class="list">
+                  <li data-category="fruits"><img width="48" height="48" src="https://img.icons8.com/color/48/group-of-fruits.png" alt="group-of-fruits"/> Fruits</li>
+                  <li data-category="vegetables"><img width="48" height="48" src="https://img.icons8.com/color/48/group-of-vegetables.png" alt="group-of-vegetables"/>Vegetables</li>
+                  <li data-category="meats"><img width="50" height="50" src="https://img.icons8.com/ios/50/rack-of-lamb.png" alt="rack-of-lamb"/>Meats</li>
+                  <li data-category="drinks"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/champagne.png" alt="champagne"/>Drinks</li>
+                  <li data-category="breads"><img width="48" height="48" src="https://img.icons8.com/doodle/48/bread--v1.png" alt="bread--v1"/>Breads</li>
+                  <li data-category="milks"><img width="48" height="48" src="https://img.icons8.com/color/48/oat-milk.png" alt="oat-milk"/>Milks</li>
+                  <li data-category="cleaner"><img width="48" height="48" src="https://img.icons8.com/color/48/housekeeper-female.png" alt="housekeeper-female"/>Cleaner</li>
+                  <li data-category="pets"><img width="48" height="48" src="https://img.icons8.com/color/48/pets--v2.png" alt="pets--v2"/>Pets</li>
+                  <li data-category="organic"><img width="40" height="40" src="https://img.icons8.com/office/40/organic-food.png" alt="organic-food"/>Organic</li>
+              </ul>
+          </div>         
+
+          <div class="filter-items">
+            <ul class="list_items">
+              <li data-category="fruits">
+                <div class="card">
+                  <div class="card-img">
+                    <img src="https://assets.sainsburys-groceries.co.uk/gol/6012710/1/640x640.jpg" alt="Image" width="150px">
+                  </div>
+                  <div class="card-info">
+                    <p class="text-title">Red Grapes </p>
+                    <p class="text-body">Sainsburys</p>
+                    <p class="text-body before_price">Was £1.99</p>
+                  </div>
+                  <div class="card-footer">
+                    <h2>£1.49</h2>
+                   <a href="https://www.sainsburys.co.uk/gol-ui/groceries">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                      <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                      <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                    </svg>
+                  </a> 
+                  </div>
+                </div>
+              </li>
+
+              <li data-category="fruits">
+                <div class="card">
+                  <div class="card-img">
+                    <img src="https://assets.sainsburys-groceries.co.uk/gol/6834746/1/640x640.jpg" alt="Image" width="150px">
+                  </div>
+                  <div class="card-info">
+                    <p class="text-title">Avocados x2</p>
+                    <p class="text-body">Sainsburys</p>
+                    <p class="text-body before_price">Was £1.65</p>
+                  </div>
+                  <div class="card-footer">
+                    <h2>£1.19</h2>
+                    <a href="https://www.sainsburys.co.uk/gol-ui/groceries">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                      <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                      <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                    </svg>
+                  </a>
+                  </div>
+                </div>
+              </li>
+
+              <li data-category="vegetables">
+                <div class="card">
+                  <div class="card-img">
+                    <img src="https://assets.sainsburys-groceries.co.uk/gol/7915748/1/640x640.jpg" alt="Image" width="150px">
+                  </div>
+                  <div class="card-info">
+                    <p class="text-title">British Gems New Potatoes</p>
+                    <p class="text-body">Sainsburys</p>
+                    <p class="text-body before_price">Was £1.65</p>
+                  </div>
+                  <div class="card-footer">
+                    <h2>£1.09</h2>
+                    <a href="https://www.sainsburys.co.uk/gol-ui/groceries">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                      <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                      <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                    </svg>
+                  </a>
+                  </div>
+                </div>
+              </li>
+
+              <li data-category="drinks">
+                <div class="card">
+                  <div class="card-img">
+                    <img src="https://ui.assets-asda.com/dm/asdagroceries/5000382033066_T1?defaultImage=asdagroceries/noImage&resMode=sharp2&id=xMqTz2&fmt=jpg&dpr=off&fit=constrain,1&wid=288&hei=288&qlt=50" alt="Image" width="150px">
+                  </div>
+                  <div class="card-info">
+                    <p class="text-title">Rubicon Sparkling Mango</p>
+                    <p class="text-body">Asda</p>
+                    <p class="text-body before_price">Was £1.99</p>
+                  </div>
+                  <div class="card-footer">
+                    <h2>£1.23</h2>
+                    <a href="https://www.sainsburys.co.uk/gol-ui/groceries">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                      <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                      <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                    </svg>
+                  </a>
+                  </div>
+                </div>
+              </li>
+
+              <li data-category="drinks">
+                <div class="card">
+                  <div class="card-img">
+                    <img src="https://ui.assets-asda.com/dm/asdagroceries/5414150410957_T1?defaultImage=asdagroceries/noImage&resMode=sharp2&id=SRXSd2&fmt=jpg&dpr=off&fit=constrain,1&wid=188&hei=188&qlt=50" alt="Image" width="150px">
+                  </div>
+                  <div class="card-info">
+                    <p class="text-title">Chocomel Chocolate Flavoured Milk</p>
+                    <p class="text-body">Asda</p>
+                    <p class="text-body before_price">Was £1.59</p>
+                  </div>
+                  <div class="card-footer">
+                    <h2>£1.00</h2>
+                    <a href="https://www.sainsburys.co.uk/gol-ui/groceries">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                      <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                      <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                    </svg>
+                  </a>
+                  </div>
+                </div>
+              </li>
+
+              <li data-category="meats">
+                <div class="card">
+                  <div class="card-img">
+                    <img src="https://imgproxy-retcat.assets.schwarz/UCEUK-fe9cgOrZP59oDkLUnRVs9Ro2Xq3NUoxQsYohE/sm:1/w:1278/h:959/cz/M6Ly9wcm9kLWNhd/GFsb2ctbWVkaWEvdWsvMS8xM0NENjAzNkFEQUQ4OTE5MERGMDI2OEI/4OEYxNzMwNTIzRUZERTIyMzczMzVBNjIwOEUyOTIwMEEwMzFEMEE2LmpwZw.jpg" alt="Image" width="150px">
+                  </div>
+                  <div class="card-info">
+                    <p class="text-title">Birchwood 4 British Sirloin Steaks </p>
+                    <p class="text-body">Lidl</p>
+                    <p class="text-body before_price">Was £19.30</p>
+                  </div>
+                  <div class="card-footer">
+                    <h2>£14.99</h2>
+                    <a href="https://www.sainsburys.co.uk/gol-ui/groceries">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                      <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                      <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                    </svg>
+                  </a>
+                  </div>
+                </div>
+              </li>
+
+              <li data-category="drinks">
+                <div class="card">
+                  <div class="card-img">
+                    <img src="https://images.squarespace-cdn.com/content/v1/630492b401e7102ee99cc184/c32ef24f-cfe1-4629-a6bb-71f7dedb6f1e/24_March__Website_Discovery_Image_281x21112.png?format=100w 100w, https://images.squarespace-cdn.com/content/v1/630492b401e7102ee99cc184/c32ef24f-cfe1-4629-a6bb-71f7dedb6f1e/24_March__Website_Discovery_Image_281x21112.png?format=300w 300w, https://images.squarespace-cdn.com/content/v1/630492b401e7102ee99cc184/c32ef24f-cfe1-4629-a6bb-71f7dedb6f1e/24_March__Website_Discovery_Image_281x21112.png?format=500w 500w, https://images.squarespace-cdn.com/content/v1/630492b401e7102ee99cc184/c32ef24f-cfe1-4629-a6bb-71f7dedb6f1e/24_March__Website_Discovery_Image_281x21112.png?format=750w 750w, https://images.squarespace-cdn.com/content/v1/630492b401e7102ee99cc184/c32ef24f-cfe1-4629-a6bb-71f7dedb6f1e/24_March__Website_Discovery_Image_281x21112.png?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/630492b401e7102ee99cc184/c32ef24f-cfe1-4629-a6bb-71f7dedb6f1e/24_March__Website_Discovery_Image_281x21112.png?format=1500w 1500w, https://images.squarespace-cdn.com/content/v1/630492b401e7102ee99cc184/c32ef24f-cfe1-4629-a6bb-71f7dedb6f1e/24_March__Website_Discovery_Image_281x21112.png?format=2500w 2500w" alt="Image" width="150px">
+                  </div>
+                  <div class="card-info">
+                    <p class="text-title">Oat Milk </p>
+                    <p class="text-body">Whole foods market</p>
+                    <p class="text-body before_price">Was £2.60</p>
+                  </div>
+                  <div class="card-footer">
+                    <h2>£1.99</h2>
+                    <a href="https://www.sainsburys.co.uk/gol-ui/groceries">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                      <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                      <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                    </svg>
+                  </a>
+                  </div>
+                </div>
+              </li>                           
+
+            </ul>
+            
+          </div>
+        </section>
+
+        <section class="recipes">
+          <h1>Recipe Searcher</h1>
+          <p>Write an item and we will show you which ingredients you need for a specific recipe.
+            <br><b>(Ex: salad, pasta, pizza, etc.)</b></p>
+          <div class="seach">
+            <div class="input-group">
+              <input type="text" class="input_recipe" id="query" name="text" placeholder="Digite um ingrediente" autocomplete="off">
+              <input class="button--submit" value="Buscar receita" type="submit" id="searchBtn">
+            </div>
+          </div>
+          
+          <div id="results"></div>
+        </section>
+
+    </main>
+
+
+
+    <footer>
+        <div class="icons_footer">
+           <a href="home.htm"><svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+        </svg></a> 
+        </div>
+
+        <div class="icons_footer">
+            <a href="favorites.html">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                </svg>
+        </a>
+        </div>
+
+        <div class="icons_footer">
+            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+            </svg>
+        </div>
+    </footer>
+</body>

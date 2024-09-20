@@ -1,0 +1,27 @@
+@import url("styles/home.css");
+@import url("styles/pag_ini.css");
+@import url("favorites.css");
+
+
+
+:root {
+    
+    --cor-de-fundo: #c1cbdb;
+    --azul-escuro: #023047;
+    --azul-claro:#8ECAE6;
+    --preto:#000000;
+    --cinza:#e5e5e5;
+    --laranja:#FB8500;
+    --amarelo:#FFB703;
+    --fonte-h1:"Lobster Two";
+    --fonte-txt:"Lato";
+}
+
+body {
+    background-color: var(--cor-de-fundo); 
+    font-size: 16px;
+    font-family: "Lobster Two";
+    font-family: "Lato";
+    
+    
+}
