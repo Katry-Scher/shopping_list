@@ -6,7 +6,7 @@ This project is a web app designed to help users create and manage shopping list
 
 🎥 Demo
 Check out a demo of the app in action:
-![Mobile Screen Recording](path_to_gif.gif)
+![Mobile Screen Recording](video-gif.gif)
 
 
 
